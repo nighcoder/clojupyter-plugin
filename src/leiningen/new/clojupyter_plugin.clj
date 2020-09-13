@@ -10,22 +10,20 @@
 (defn clojupyter-plugin
   "Clojupyter plugins template"
   [name]
-  (let [raw-name (if (str/includes? name "/")
-                   name
-                   (str "clojupyter/" name))
-        data     {:raw-name raw-name
-                  :namespace (multi-segment (sanitize-ns raw-name))
-                  :year (year)
-                  :name (project-name raw-name)
-                  :sanitized (name-to-path raw-name)}]
+  (let [data {:raw-name name
+              :namespace (multi-segment (sanitize-ns name))
+              :year (year)
+              :name (project-name name)
+              :sanitized (name-to-path name)}]
     (main/info "Generating new clojupyter-plugin project.")
     (->files data
              ["project.clj" (render "project.clj" data)]
-             ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
+             ["src/{{sanitized}}.clj" (render "core.clj" data)]
              ["README.md" (render "README.md" data)]
              ["LICENSE.md" (render "LICENSE.md" data)]
              [".gitignore" (render "gitignore" data)]
              ["bin/install" (render "install" data)]
              ["bin/uninstall" (render "uninstall" data)]
              ["bin/version" (render "version" data)]
+             ["examples/{{name}}.ipynb" (render "example.ipynb" data)]
              "resources")))
