@@ -10,11 +10,12 @@
 (defn clojupyter-plugin
   "Clojupyter plugins template"
   [name]
-  (let [data {:raw-name name
-              :namespace (multi-segment (sanitize-ns name))
+  (let [ns (multi-segment (sanitize-ns name))
+        data {:raw-name name
+              :namespace ns
               :year (year)
               :name (project-name name)
-              :sanitized (name-to-path name)}]
+              :sanitized (name-to-path ns)}]
     (main/info "Generating new clojupyter-plugin project.")
     (->files data
              ["project.clj" (render "project.clj" data)]
