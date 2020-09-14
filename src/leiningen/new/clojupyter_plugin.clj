@@ -23,8 +23,8 @@
              ["README.md" (render "README.md" data)]
              ["LICENSE.md" (render "LICENSE.md" data)]
              [".gitignore" (render "gitignore" data)]
-             ["bin/install" (render "install" data)]
-             ["bin/uninstall" (render "uninstall" data)]
-             ["bin/version" (render "version" data)]
+             ["bin/install" (render "install" data) :executable true]
+             ["bin/uninstall" (render "uninstall" data) :executable true]
+             ["bin/version" (render "version" data) :executable true]
              ["examples/{{name}}.ipynb" (render "example.ipynb" data)]
              "resources")))

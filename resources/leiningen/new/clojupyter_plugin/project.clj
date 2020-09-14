@@ -6,6 +6,6 @@
   :dependencies [[clojupyter "0.4.0"]]
 
   :profiles {:dev           {:plugins [[lein-metajar "0.1.2"]]}
-             :metajar       {:libpath "../lib"}}
+             :metajar       {:libdir "../lib"}}
 
   :target-path "target/plugins")
