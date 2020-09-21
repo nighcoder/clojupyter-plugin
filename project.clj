@@ -1,4 +1,4 @@
-(defproject clojupyter-plugin/lein-template "0.1.0"
+(defproject clojupyter-plugin/lein-template "0.1.1-SNAPSHOT"
   :description "Clojupyter plugin template for Leiningen"
   :url "https://github.com/nighcoder/clojupyter-plugin"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
