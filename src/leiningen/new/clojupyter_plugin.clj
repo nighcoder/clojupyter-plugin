@@ -26,5 +26,8 @@
              ["bin/install" (render "install" data) :executable true]
              ["bin/uninstall" (render "uninstall" data) :executable true]
              ["bin/version" (render "version" data) :executable true]
+             ["bin/install.ps1" (render "install.ps1" data)]
+             ["bin/uninstall.ps1" (render "uninstall.ps1" data)]
+             ["bin/version.ps1" (render "version.ps1" data)]
              ["examples/{{name}}.ipynb" (render "example.ipynb" data)]
              "resources")))
