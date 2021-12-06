@@ -1,6 +1,5 @@
 (ns leiningen.new.clojupyter-plugin
-  (:require [clojure.string :as str]
-            [leiningen.new.templates :refer
+  (:require [leiningen.new.templates :refer
               [renderer name-to-path ->files project-name year sanitize-ns multi-segment]]
             [leiningen.core.main :as main]))
 

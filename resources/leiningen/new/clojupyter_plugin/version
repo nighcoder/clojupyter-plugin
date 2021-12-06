@@ -1,3 +1,3 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
-grep '(defproject {{raw-name}}' project.clj | sed 's/.\+"\(.\+\)"/\1/g'
+grep '(defproject {{raw-name}}' project.clj | sed -E 's/.+"(.+)"/\1/g'
